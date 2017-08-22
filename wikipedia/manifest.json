@@ -1,0 +1,42 @@
+{
+  "name": "Wikipedia Anywhere",
+  "short_name": "iwanywhere",
+  "description": "Access to a floating mobile-version of Wikipedia on any webpage",
+  "author": "Jeremy Schomery",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "permissions": [
+    "storage",
+    "tabs",
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    "data/icons/32.png",
+    "data/icons/loading.svg"
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "common.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "exclude_matches": [
+        "*://*.m.wikipedia.org/*"
+      ],
+      "js": ["data/inject/inject.js"],
+      "css": ["data/inject/inject.css"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "homepage_url": "http://add0n.com/wikipedia.html",
+  "icons": {
+    "16": "data/icons/16.png",
+    "48": "data/icons/48.png",
+    "128": "data/icons/128.png"
+  }
+}
