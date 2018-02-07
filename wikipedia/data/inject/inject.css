@@ -2,7 +2,8 @@
   position: absolute;
   width: 32px;
   height: 32px;
-  background: url('chrome-extension://__MSG_@@extension_id__/data/icons/32.png') center center no-repeat;
+  background: url('chrome-extension://__MSG_@@extension_id__/data/icons/64.png') center center no-repeat;
+  background-size: 32px 32px;
   z-index: 16777271;
 }
 .wikiframeme {
@@ -18,7 +19,8 @@
 
 @-moz-document url-prefix() {
   .wikianywhere {
-    background-image: url('moz-extension://__MSG_@@extension_id__/data/icons/32.png');
+    background-image: url('moz-extension://__MSG_@@extension_id__/data/icons/64.png');
+    background-size: 32px 32px;
   }
   .wikiframeme:not([data-loaded=true]) {
     background-image: url('moz-extension://__MSG_@@extension_id__/data/icons/loading.svg');
